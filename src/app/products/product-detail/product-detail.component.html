@@ -1,0 +1,44 @@
+
+<button routerLink="" class="btn btn-outline-secondary">Back</button>
+<p>product-detail works!</p>
+
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <div>{{singleproduct.title}}</div>
+        <div>{{singleproduct.category}}</div>
+    </div>
+    <div class="card-body">
+        <div><img [src]="singleproduct.image" width="300" height="auto" /></div>
+        <div>  {{singleproduct.description}}</div>
+        <div>{{singleproduct.price | currency: 'INR'}}</div>
+
+        <div class="star-rating">
+
+                <div class="star-rating-active">
+                    <span *ngFor="let star of generatedivs(singleproduct.rating.rate)" class="material-symbols-outlined star-active">
+                        star
+                    </span>
+                </div>
+           
+               
+
+                <div class="star-rating-empty">
+                    <span *ngFor="let star of emptystars(5)" class="material-symbols-outlined">
+                        star
+                        </span>
+                </div>
+
+                <div class="total-rating">({{singleproduct.rating.count}})</div>
+
+        </div>
+
+       
+
+        
+       
+        <button class="btn btn-primary mt-3">Buy Now</button>
+        <button (click)="addtocart()" class="btn btn-outline-primary mt-3 ms-3">Add To Cart</button>
+      
+    </div>
+</div>

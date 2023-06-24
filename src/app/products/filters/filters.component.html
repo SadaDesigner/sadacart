@@ -1,0 +1,21 @@
+<div class="col-12 px-3">
+    <h6 class="mt-3">Filter By:</h6>
+    <div>Category</div>
+    <ul>
+        <li *ngFor="let category of categories">
+            <div class="form-check">
+                <input (click)="selectCategory(category)" class="form-check-input" type="checkbox" [value]="category" [id]="category">
+                <label class="form-check-label" [for]="category">
+                    {{category}}
+                </label>
+              </div>
+          
+          </li>
+    </ul>
+
+    <div>Customer Review</div>
+
+   
+
+
+</div>

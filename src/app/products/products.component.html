@@ -1,0 +1,41 @@
+<button class="btn btn-outline-secondary" (click)="filterByCategory()">click</button>
+  
+<div class="row">
+    <div class="col-12">
+        <div class="row justify-content-end">
+            <div class="col-2 mb-2">
+                <select name="" id="" class="form-control" (change)="sortingproducts($event)">
+                    <option value="">--sort by--</option>
+                    <option value="ascendingproducts">Price: Low to High</option>
+                    <option value="descendingproducts">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-2 h-100">
+        <div class="card h-100">
+            <app-filters></app-filters>
+        </div>
+      
+    </div>
+     <div class="col-10">
+        <div class="row">
+            <ng-container *ngFor="let product of allProducts">
+                <div class="col-12 col-sm-3">
+                    <app-card [product]="product">
+                
+                    </app-card>
+               </div>
+           
+              </ng-container>
+        </div>
+
+
+     </div>
+    
+   
+</div>
+
+
+
